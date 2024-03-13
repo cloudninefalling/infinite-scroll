@@ -1,21 +1,12 @@
 import styled from "styled-components";
 
-export const PostList = styled.ul`
-  list-style: none;
-  padding: 0;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  max-width: 80%;
-`
-
 export const PostContainer = styled.li`
   display: grid;
-  grid-template-columns: max-content 10vw auto max-content;
+  grid-template-columns: max-content 8vw auto max-content;
   gap: 2rem;
   background-color: ${props => props.theme.colors.primary};
   border-radius: 1rem;
+  box-shadow: 1px 1px 0 1px rgba(0,0,0,0.75);
   padding: 1rem;
   align-items: center;
   max-width: 100%;
@@ -31,6 +22,7 @@ export const PostTitle = styled.h3`
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
+  text-transform: capitalize;
 `;
 
 export const PostBody = styled.p`
@@ -53,11 +45,13 @@ transition: all 0.2s ease-in-out;
 margin-block: auto;
 margin-left: auto;
 min-width: max-content;
+box-shadow: 2px 2px 0 1px rgba(0,0,0,0.75);
+
 
 &:hover {
   background-color: ${props => props.theme.colors.accent};
   padding: 0.6rem;
-  box-shadow: -1px 2px 0 1px rgba(0,0,0,0.75);
+  box-shadow: 3px 3px 0 1px rgba(0,0,0,0.75);
 }
 
 `

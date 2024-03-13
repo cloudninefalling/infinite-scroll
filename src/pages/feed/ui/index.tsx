@@ -1,5 +1,5 @@
 import { PostCard } from "@/entities/post";
-import { PostList } from "@/entities/post/ui/styles";
+import { PostList } from "./styles";
 
 export function Feed() {
   return (
