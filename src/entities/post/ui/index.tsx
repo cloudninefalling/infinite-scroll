@@ -1,5 +1,12 @@
+import { useNavigate } from "react-router-dom";
 import type { TPost } from "../model/post";
-import { Link } from "react-router-dom";
+import {
+  PostBody,
+  PostButton,
+  PostContainer,
+  PostId,
+  PostTitle,
+} from "./styles";
 
 type Props = {
   post: TPost;
@@ -7,13 +14,16 @@ type Props = {
 
 export function PostCard({ post }: Props) {
   const { title, body, id } = post;
+  const navigate = useNavigate();
 
   return (
-    <div>
-      <p>{id}</p>
-      <h2>{title}</h2>
-      <p>{body}</p>
-      <Link to={`/posts/${id}`}>Read more</Link>
-    </div>
+    <PostContainer>
+      <PostId>{id}</PostId>
+      <PostTitle>{title}</PostTitle>
+      <PostBody>{body}</PostBody>
+      <PostButton type="button" onClick={() => navigate(`/posts/${id}`)}>
+        Read More
+      </PostButton>
+    </PostContainer>
   );
 }
