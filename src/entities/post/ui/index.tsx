@@ -1,11 +1,11 @@
-import Post from "../model/post";
+import type { TPost } from "../model/post";
 import { Link } from "react-router-dom";
 
 type Props = {
-  post: Post;
+  post: TPost;
 };
 
-export default function PostCard({ post }: Props) {
+export function PostCard({ post }: Props) {
   const { title, body, id } = post;
 
   return (

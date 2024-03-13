@@ -5,4 +5,4 @@ type TPostDetailed = {
   body: string;
 }
 
-export default TPostDetailed;
+export type { TPostDetailed };

@@ -4,4 +4,4 @@ type TPost = {
   body: string;
 }
 
-export default TPost;
+export type { TPost };
