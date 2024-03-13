@@ -1,22 +1,26 @@
-import { PostCard } from "@/entities/post";
+import { useGetPostsQuery } from "@/entities/post/api";
 import { PostList } from "./styles";
+import { PostCard } from "@/entities/post";
 
 export function Feed() {
+  const { data, error, isLoading } = useGetPostsQuery();
+
+  console.log(data ? data[0] : 0);
+
   return (
     <>
       <h2>Feed</h2>
-      <PostList>
-        <PostCard
-          post={{ id: 1, title: "test", body: "this is a text" }}
-        ></PostCard>
-        <PostCard
-          post={{
-            id: 2,
-            title: "test2",
-            body: "this is a very long text in fact it is so long that it probably overtakes entire page length wow it really takes a lt of words doesnt it",
-          }}
-        ></PostCard>
-      </PostList>
+      {error ? (
+        <h3>Something went wrong, try again later.</h3>
+      ) : isLoading ? (
+        <h3>Loading...</h3>
+      ) : (
+        <PostList>
+          {data?.map((post) => (
+            <PostCard key={post.id} post={post} />
+          ))}
+        </PostList>
+      )}
     </>
   );
 }

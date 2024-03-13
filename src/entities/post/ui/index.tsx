@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import type { TPost } from "../model/post";
+import type { TPost } from "../model";
 import {
   PostBody,
   PostButton,
